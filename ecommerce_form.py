@@ -28,8 +28,7 @@ class OnlinePurchase:
     def process_purchase(self, cart, coupon, address):
         print("Processng purcase...")
 
-        if not cart:
-            return " Error: The cart is empty."
+
 
         for item, quantity in cart.items():
             if item not in self.items:
@@ -39,9 +38,6 @@ class OnlinePurchase:
 
         if not self.validate_coupon(coupon):
             return " Error: The entered coupon code is not valid."
-
-        if not self.validate_address(address):
-            return " Error: The shipping address is not valid."
 
         total = sum(self.items[item] * quantity for item, quantity in cart.items())
         discount = self.valid_coupons.get(coupon, 0)
