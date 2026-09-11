@@ -1,8 +1,7 @@
 
 class OnlinePurchase:
     def __init__(self):
-        self.valid_coupons = {"DISCOUNT10": 0.15, "DISCOUNT30": 0.30}
-        
+        self.valid_coupons = {"DISCOUNT10": 0.15, "DISCOUNT30": 0.30}        
         self.items = {
             "Laptop": 1000,
             "Headphones": 100,
@@ -15,7 +14,7 @@ class OnlinePurchase:
             "Smartphone": 800,
             "Tablet": 400
         }
-
+        
     def validate_quantity(self, quantity):
         return isinstance(quantity, int) and quantity > 0
 
@@ -27,8 +26,6 @@ class OnlinePurchase:
 
     def process_purchase(self, cart, coupon, address):
         print("Processng purcase...")
-
-
 
         for item, quantity in cart.items():
             if item not in self.items:
@@ -52,4 +49,3 @@ class OnlinePurchase:
                 f"Total to payy: ${total_with_discount:.2f}")
 
 
-if __name__ == "__main__":
